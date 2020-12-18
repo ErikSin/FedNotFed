@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar class="ion-padding">
+    <h1>Random Dog Photo Generator</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="ion-padding">
+    <h3>Need a pick me up?</h3>
+    <h4>Click the button below to see a photo of another dog in the app.</h4>
+  </ion-card>
+
+  <ion-button class="ion-margin" (click)="generatePhoto()">
+    See Another Dog
+  </ion-button>
+
+  <ion-card style="display: flex; flex-wrap: wrap;" class="ion-padding ion-justify-content-center">
+    <h1 style="flex-basis: 100%; text-align: center;">{{dogName}}</h1>
+    <img [src]="dogPhoto">
+    <div class="comment">
+      <ion-icon></ion-icon>
+    </div>
+  </ion-card>
+
+ 
+
+</ion-content>

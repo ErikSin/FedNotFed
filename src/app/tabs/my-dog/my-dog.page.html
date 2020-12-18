@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-slides>
+    <!-- Index 0 -->
+    <ion-slide class="ion-wrap">
+      <h1 style="flex-basis: 100%;">Sign Up</h1>
+
+
+      <ion-list style="flex-basis: 100%;" class="ion-padding">
+        <h4>Dogs Name</h4>
+        <ion-input
+          
+          [(ngModel)]="dogName">
+        </ion-input>
+
+        <h4>Breed</h4>
+        <ion-input [(ngModel)]="breed">
+        </ion-input>
+
+        <h4>Weight (lbs)</h4>
+        <ion-input 
+          [(ngModel)]="weight"
+          type="number">
+        </ion-input>
+
+        <h4>Age
+        </h4>
+        <ion-select #ageSelect>
+          <ion-select-option> &lt; 1 </ion-select-option>
+          <ion-select-option *ngFor="let age of ages">{{age}}</ion-select-option>
+        </ion-select>
+
+        <h4>Last Vet Visit</h4>
+        <ion-select #monthSelect>
+          <ion-select-option *ngFor="let month of months">{{month}}</ion-select-option>
+        </ion-select>
+
+      </ion-list>
+
+      <ion-button>Submit</ion-button>
+    </ion-slide>
+
+    <!-- Slide index 1 -->
+    <ion-slide class="ion-wrap">
+      <h1 style="flex-basis: 100%;">Take a Photo of your dog</h1>
+
+      <img *ngIf="imageAsUrl != undefined" [src]="imageAsUrl">
+
+      <ion-fab-button style="margin-top: 25px;" (click)="takePhoto()">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-fab-button>
+
+    </ion-slide>
+
+    
+  </ion-slides>
+
+</ion-content>
